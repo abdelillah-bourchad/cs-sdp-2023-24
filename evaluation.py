@@ -7,7 +7,7 @@ import metrics
 import numpy as np
 from data import Dataloader
 # from models_using_errors import HeuristicModel, TwoClustersMIP
-from models_salah import TwoClustersMIP
+from models import TwoClustersMIP
 
 
 if __name__ == "__main__":
