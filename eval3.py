@@ -58,12 +58,12 @@ if __name__ == "__main__":
     model.fit(X1, Y1) 
     
     # Uncoment To run the fit with the second problem formulation (the one that minimizes the sum of the binary vector)
-    
+      
     # model.fit_beta(X, Y)  # The second formulation
 
     # %Pairs Explained
     pairs_explained = metrics.PairsExplained()
-    k = pairs_explained.from_model(model, X1, Y1)
+    k = pairs_explained.from_model(model, X, Y)
     print("Percentage of explained preferences:", k)
     L_Percentage_of_explained_preferences.append(k)
 
@@ -72,7 +72,7 @@ if __name__ == "__main__":
 
     Z = data_loader.get_ground_truth_labels()
     print("% of pairs well grouped together by the model:")
-    print("Cluster intersection for all samples:", cluster_intersection.from_model(model, X1, Y1, Z))
+    print("Cluster intersection for all samples:", cluster_intersection.from_model(model, X, Y, Z))
 
     
     # print(L_Percentage_of_explained_preferences)

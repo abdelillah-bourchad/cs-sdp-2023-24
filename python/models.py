@@ -487,7 +487,6 @@ class HeuristicModel(BaseModel):
             return np.array(labels).T
 
         def fit_uta_proba(X, Y, weights) :
-            
             n = X.shape[1]
             P = X.shape[0]
             L = 5
