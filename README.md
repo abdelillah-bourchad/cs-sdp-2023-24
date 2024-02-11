@@ -3,6 +3,11 @@
   <img aligne="center" src="images/artefact.png" width="50%" ver />
 </p>
 
+# Team members 
+LEMAACHI Salahidine 
+CHATER Oumaima 
+BOURCHAD Abdelillah
+
 # Decision Systems and Preferences
 Auriau Vincent,
 Belahcene Khaled,

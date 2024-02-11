@@ -162,7 +162,7 @@ class TwoClustersMIP(BaseModel):
     You have to encapsulate your code within this class that will be called for evaluation.
     """
 
-    def __init__(self, n_pieces, n_clusters, epsilon=10e-5):
+    def __init__(self, n_pieces, n_clusters, epsilon=10e-12):
         """Initialization of the MIP Variables
 
         Parameters
@@ -311,7 +311,6 @@ class TwoClustersMIP(BaseModel):
         self.model.setObjective(quicksum((self.sigma_x_plus[j] + self.sigma_x_moins[j] + self.sigma_y_plus[j] + self.sigma_y_moins[j]) for j in range(self.P)), GRB.MINIMIZE)
 
         # Solve
-        print("##########")
         print("Training started")
         self.model.params.outputflag = 0
         self.model.update()
@@ -685,7 +684,7 @@ class HeuristicModel(BaseModel):
         sc = 0
         
         while it<self.n_iter : 
-            print(f"Iteration {it+1} : ")
+            print(f"Iteration {it+1}/{self.n_iter} : ")
             print(f"Explained pairs pourcentage : {sc}")
             
             self.history['acc'].append(sc) 
@@ -738,7 +737,7 @@ class HeuristicModel(BaseModel):
                     
             return utilities 
         
-        utilities = np.zeros((self.P, self.K))
+        utilities = np.zeros((X.shape[0], self.K))
         for k in range(self.K) : 
             utilities[:, k] = predict_util(X, self.models[k])
         return utilities
